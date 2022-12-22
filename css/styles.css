@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap');
+
+
+
+:root{
+    --primary-bg-colour:#34495E;
+    --second-bg-colour:#212F3D;
+    --txt-white:#fff;
+    --primary-color:#68d027;
+    --box-shadow: 10px 8px #239B56;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: "Montserrat", sans-serif;
+    overflow: hidden;
+}
+
+a{
+    color: var(--txt-white);
+}
+
+header{
+    color: var(--txt-white);
+    background: var(--second-bg-colour);
+    font-size: 1.2rem;
+    min-height: 100vh;
+    width:100%;
+}
+
+nav{
+    display:flex;
+    justify-content:space-around;
+    align-items: center;
+    width: 100%;
+    background: var(--primary-bg-colour);
+    height: 80px;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+}
+
+nav ul li{
+    padding: 1.2rem 0.5rem;
+    margin: 0 1.4rem;
+    position: relative;
+}
+
+nav ul li a::after{
+    content: "";
+    position:absolute;
+    height: 3px;
+    background: var(--primary-color);
+    width: 0%;
+    left: 0;
+    top: 60px;
+    transition: all 0.3s;
+}
+
+nav ul li a:hover:after {
+    width: 100%;
+    
+}
+.social-icons a{
+    padding: 0 1rem;
+    transition: all 0.3x;
+}
+
+.social-icons a:hover{
+    color: var(--primary-color);
+
+}
+
+.logo{
+
+    font-size: 1rem;
+    color: var(--primary-color); 
+}
+
+.logo span{
+    font-size: 4rem;
+}
+
+.content-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 84vh;
+    padding: 0 10%;
+
+}
+
+.content-left{
+    width: 70%;
+}
+
+.content-left .lead{
+    font-size: 2rem;
+    font-weight: 500;
+
+}
+
+.txt-content{
+    display: flex;
+    width: 100%;
+}
+
+.normal_txt{
+    font-size: 3rem;
+    width: 15%;
+}
+
+.change_txt{
+    font-size: 3.5rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    position: relative;
+}
+/*Animation Of FrontendText*/
+.txt-content .change_txt::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-left:  2px solid #fff;
+   /* background: rgb(0, 0, 0, 1);*/
+   background: var(--second-bg-colour);
+
+    animation: animateTxt 5s steps(25) infinite;
+} 
+
+content-left p{
+    font-size: 1rem;
+    line-height: 2rem;
+    margin: 1rem, 0;
+
+}
+
+.content-left button{
+    display: inline-block;
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 1rem  2rem;
+    margin:  2rem 2rem 0 0;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 0.2px;
+    transition: all 0.5s;
+}
+
+
+.content-left button:hover{
+    background: var(--primary-color);
+    border: none;
+    padding: 1rem 3rem;
+}
+
+.content-left button:active{
+    transform: scale(0.95);
+}
+.content-right{
+    width: 35%;
+    box-shadow: var(--box-shadow);
+    border-radius: 0.5px;
+    background: white;
+    transform: translateX(300%);
+
+    animation: imgAnimate 3s forwards;
+
+}
+
+.content-right img{
+    display: block;
+    min-height: 100%;
+    width: 100%;
+    border-radius: 0.5px;
+}
+
+.skills{
+    display: flex;
+    justify-content:space-around ;
+    align-items: center;
+    background:var(--primary-bg-colour);
+    color: #fff;
+    width: 100%;
+    padding: 0.5px;
+}
+
+.skills h2{
+    font-size: 2rem;
+    padding: 0.5rem 0;
+    color: var(--primary-color);
+}
+
+.skills i{
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+.skills .html{
+    color:#e44f26;
+}
+.skills .css3{
+    color: #1572b6;
+}
+.skills .js{
+    color: #ffd700;
+}
+.skills .react{
+    color: #61dafb;
+}
+
+@keyframes imgAnimate{
+    to{
+        transform:translateX(0);
+        /*transform: skew(-3deg);*/
+    }
+}
+/*animation for txt*/
+@keyframes animateTxt{
+    3%{
+        left: 0;
+    }
+    30%{
+        left: 100%;
+    }
+    80%{
+        left: 100%;
+    }
+    100%{
+        left: 0;
+    }
+}
+/*ends*/
